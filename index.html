@@ -5,9 +5,7 @@
 		<link rel="stylesheet" media="screen" type="text/css" href="style.css">
 	</head>
 	<body>
-		<div id="left">
-				<p class="post-cat">ABOUT</p>
-		</div>
+		
 		<div id="head">
 			<div id="head-buffer"></div>
 			<div id="headline">
@@ -29,24 +27,53 @@
 			
 			<div class="center">
 				<div class="post"></p>
-					<div class="post-heading">why simplicity<p class="post-date">10/01/2014</p></div>
+					<div class="post-heading">less - die l&ouml;sung aller css-probleme?<p class="post-date">29/06/2014</p></div>
 					<div class="post-content">
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   
+Wer sich bereits etwas eingehender mit CSS besch&auml;ftigt hat und etwas Erfahrung im Bereich der Webprogrammierung besitzt wird diese Frage vielleicht nicht stellen, dennoch ist sie berechtigt: &Prime;Welche Probleme siehst du bei CSS? 	&Prime;. 
+Nun, zun&auml;chst mal ist CSS eine gute Sache, die Trennung von Stil und Struktur ist ein guter Ansatz. Jeder der sich schon einmal mit Inline-Style aus der guten alten Zeit (not...) konfrontiert sah, wei&szlig; auch schlecht strukturiertes CSS zu sch&auml;tzen.   <br>
+Dennoch vernimmt man in Entwicklerkreisen immer wieder einen gewissen Unmut, wenn es darum geht CSS selbst zu schreiben und kein fertiges Framework wie Bootstrap zu verwenden. Warum?<br><br>
+Nun, CSS z&auml;hlt nicht gerade zu den komfortabelsten Sprachen, die Syntax ist stark eingeschr&auml;nkt und bietet wenig M&ouml;glichkeiten. Dazu kommt die nur gem&auml;chliche Weiterentwicklung des Standards, Neuerungen brauchen oft Jahre, bis sie in der breiten Masse der Browser angekommen und einheitlich integriert wurden. Trotz enormen Fortschritten in der Browserentwicklung in den letzten Jahren (vor allem beim unter Webentwicklern enorm beliebten Internet Explorer :P ) ist das Erstellen eigener Stylesheets immer noch eine unn&ouml;tig komplizierte Aufgabe. Was fehlt sind syntaktische M&ouml;glichkeiten wie wiederverwendbare Variablen oder Funktionen. Hier scheint die Entwicklung etwas stehen geblieben zu sein. <br><br>
+An dieser Stelle setzt nun less an, welches sich selbst als CSS-Pr&auml;prozessor beschreibt. Less bietet eine erweiterte Syntax, stellt somit eine Obermenge zur vorhandenen CSS-Syntax dar. Vor der Auslieferung an den Client wird less in reines CSS kompiliert, ist somit mit jedem aktuellen Browser kompatibel.<br><br>
+Doch nun zu den Fakten, was bietet less konkret und wie macht es mir als Entwickler das Leben einfacher?
 <br><br>
-Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.   
+<h3>Variablen:</h3><br><br>
+Less bietet die M&ouml;glichkeit Variablen zu definieren und diesen Werte zuzuweisen. Auf die Werte der einmal definierten Variablen kann im gesamten CSS-Dokument zugegriffen werden. Das folgende Beispiel zeigt die Verwendung einer Variablen um eine gewisse Farbe nur einmal angeben zu m&Uuml;ssen, bei &Auml;nderungen muss nun lediglich ein Wert an einer Stelle ge&auml;ndert werden. Die rechte Seite zeigt die Ausgabe des less-compilers nach der &Uuml;bersetzung. 
 <br><br>
-
-Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.   
+<img src="value-variables.png" style="width:80%">
+<br><br><br>
+Doch Variablen lassen sich nicht nur dazu verwenden um die Werte von Attributen zu ver&auml;ndern. Ebenso ist es m&ouml;glich Variablen als Selektoren einzusetzen:
 <br><br>
-
-Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.   
+<img src="selector-variables.png" style="width:80%">
+<br><br><br>
+Less setzt keine Grenzen bei der Verwendung, auch Pfade und Attributnamen lassen sie durch Variablen darstellen:
 <br><br>
-
-Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.   
+<img src="every-variables.png" style="width:80%">
+<br><br><br><br>
+<h3>Mixins:</h3><br><br>
+Etwas weiter als Variablen gehen Mixins. Mit ihnen lassen sich ganze Bl&ouml;cke definieren, welche an beliebigen stellen wieder eingesetzt werden. Mixins k&ouml;nnen entweder normale CSS-Klassen sein, welche dann auch im &uml;bersetzten CSS-Dokument vorhanden sind:
 <br><br>
-
-At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur<br><br>
+<img src="mixins1.png" style="width:90%">
+<br><br><br>
+Durch das Hinzuf&uuml;gen von Klammern erscheint das Mixin nur noch an den eingebundenen Stellen, nicht mehr jedoch als separates CSS Element. So lassen sich auch &Uuml;bergabe werte in das Mixin einbringen:
 <br><br>
+<img src="mixins2.png" style="width:30%">
+<br><br><br><br>
+<h3>Schleifen:</h3><br><br>
+Auch die Verwendung von Schleifen um wiederkehrende sich stark &auml;hnelnde Code-Segmente generieren zu lassen ist mit less m&ouml;glich:
+<br><br>
+<img src="loops.png" style="width:80%">
+<br><br><br><br>
+Ist das schon alles? Bei Weitem noch nicht, less bietet noch etliche weiter Highlights, welche die Entwicklung von Stylesheets deutlich angenehmer gestalten. Diese w&uuml;rden allerdings den Umfang dieses Artikels bei Weitem sprengen. An dieser Stelle m&ouml;chte ich auf die offizielle Seite des less-Projektes verweisen, auf welcher sich auch eine vollst&auml;ndige Dokumentation befindet: <a href="www.lesscss.org/">lesscss.org</a><br><br>
+<br>
+Zu guter letzt folgt hier noch eine schnelle Anleitung zu Installation und Verwendung von less:<br>
+Less ist als Node Paket &uuml;ber den Node-Pakage-Manager installierbar (Node sollte bereits installiert sein).
+Das &Uuml;bersetzen einer less Datei in eine CSS Datei erfolgt mit dem Aufruf des less Compilers unter Angabe der beiden Dateinamen:
+<br><br>
+<img src="install.png" style="width:40%">
+<br><br><br><br>
+Aber Moment, was ist den mit der Frage vom Anfang, l&ouml;st less wirklich alle Probleme mit denen man sich als CSS Entwickler konfrontiert sieht? Nun, Einige bestimmt, je nachdem wie komplex die Stylesheets sind, bietet less enormes Potential zur Zeitersparnis. Allerdings wird less nicht nativ durch den Browser unterst&uuml;tzt, sondern muss zun&auml;chst &uuml;bersetzt werden. Hieraus entsteht ein weiterer Schritt in der Build-Pipeline was diese weiter kompliziert.
+Am Ende muss jeder Entwickler selbst entscheiden ob er less verwenden m&ouml;chte oder nicht. Ich kann nur Jedem raten es einmal auszuprobieren und sich eine eigene Meinung zu bilden. Ich hoffe mein Artikel hat hierzu vielleicht den Anstoss gegeben. <br><br>
+So, jetzt bin ich wirklich am Ende - viel Spass mit less.
 
 
 					</div>
